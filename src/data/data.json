@@ -1,0 +1,60 @@
+[
+	{
+		"category": "Politics",
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Whose 2016 presidential campaign slogan was &quot;Make America Great Again&quot;?",
+		"correct_answer": "Donald Trump",
+		"incorrect_answers": [
+			"Ted Cruz",
+			"Marco Rubio",
+			"Bernie Sanders"
+		]
+	},
+	{
+		"category": "Entertainment: Video Games",
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which was the first video game to be produced by development company Rare?",
+		"correct_answer": "Slalom",
+		"incorrect_answers": [
+			"R.C. Pro-Am",
+			"Donkey Kong Country",
+			"Battletoads"
+		]
+	},
+	{
+		"category": "Entertainment: Television",
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "What was the name of Ross&#039; pet monkey on &quot;Friends&quot;?",
+		"correct_answer": "Marcel",
+		"incorrect_answers": [
+			"Jojo",
+			"George",
+			"Champ"
+		]
+	},
+	{
+		"category": "Entertainment: Video Games",
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of these is NOT a faction included in the game Counter-Strike: Global Offensive?",
+		"correct_answer": "BOPE",
+		"incorrect_answers": [
+			"GSG-9",
+			"Elite Crew",
+			"Phoenix Connexion"
+		]
+	},
+	{
+		"category": "General Knowledge",
+		"type": "boolean",
+		"difficulty": "medium",
+		"question": "&quot;Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo.&quot; is a grammatically correct sentence.",
+		"correct_answer": "True",
+		"incorrect_answers": [
+			"False"
+		]
+	}
+]
