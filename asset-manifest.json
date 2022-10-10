@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dae25cfb.css",
+    "main.js": "/static/js/main.b29bb6db.js",
+    "static/media/SpoqaHanSansThin.ttf": "/static/media/SpoqaHanSansThin.98563fd4c3f57daf4df3.ttf",
+    "static/media/SpoqaHanSansLight.ttf": "/static/media/SpoqaHanSansLight.099294e909bdfbb07296.ttf",
+    "static/media/SpoqaHanSansRegular.ttf": "/static/media/SpoqaHanSansRegular.9717b6e731b0afcf0c39.ttf",
+    "static/media/SpoqaHanSansBold.ttf": "/static/media/SpoqaHanSansBold.1071724b51a73d3bd35b.ttf",
+    "static/media/SpoqaHanSansLight.woff": "/static/media/SpoqaHanSansLight.92216a6a76015235ec5a.woff",
+    "static/media/SpoqaHanSansThin.woff": "/static/media/SpoqaHanSansThin.c9043ada39934fa12789.woff",
+    "static/media/SpoqaHanSansRegular.woff": "/static/media/SpoqaHanSansRegular.bc34ca16b9faa1892805.woff",
+    "static/media/SpoqaHanSansBold.woff": "/static/media/SpoqaHanSansBold.333a6001830d10c8310d.woff",
+    "static/media/SpoqaHanSansBold.woff2": "/static/media/SpoqaHanSansBold.4bed86c35c8d0be25657.woff2",
+    "static/media/SpoqaHanSansRegular.woff2": "/static/media/SpoqaHanSansRegular.41761e4a9fee0c804c50.woff2",
+    "static/media/SpoqaHanSansLight.woff2": "/static/media/SpoqaHanSansLight.466511631ada5c8f03e5.woff2",
+    "static/media/SpoqaHanSansThin.woff2": "/static/media/SpoqaHanSansThin.ac8d4839d7e95b67ea06.woff2",
+    "index.html": "/index.html",
+    "main.dae25cfb.css.map": "/static/css/main.dae25cfb.css.map",
+    "main.b29bb6db.js.map": "/static/js/main.b29bb6db.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dae25cfb.css",
+    "static/js/main.b29bb6db.js"
+  ]
+}
