@@ -57,6 +57,13 @@ const Quiz = ({ data, endQuiz }) => {
 
 	};
 
+	const containerStyles = {
+		card: "flex flex-col",
+		square: "flex justify-center gap-10 flex-wrap",
+		squareMany: "flex justify-center gap-5 flex-wrap",
+
+	}
+
 
 	return (
 		<div key={questionIndex} className='prose max-w-md fadeIn w-full flex flex-col justify-center'>
@@ -66,25 +73,40 @@ const Quiz = ({ data, endQuiz }) => {
 			<p className='whitespace-pre-line text-gray-400 text-xs'>
 				{data[questionIndex].subQuestion}
 			</p>
-			<div className='flex flex-col '>
-				{data[questionIndex].options.map((option, i) => {
-					const decodedOption = he.decode(option);
-					console.log({ decodedOption })
-					return (
-						<button
-							className={`option flex justify-between items-center p-5 ${activeIndex === i ? "bg-purple-200" : ''}`}
-							value={decodedOption}
-							active={userSlectedAns === decodedOption}
-							onClick={event => handleItemClick(event, i)}
-						>
-							<span className='font-semibold'>{decodedOption}</span>
-							<CheckIcon
-								className={`icon rounded-full text-xs text-white  ${activeIndex === i ? "bg-purple-700" : 'bg-gray-300'}`}
-							/>
-						</button>
-					);
+			<div className={containerStyles[data[questionIndex].type]}>
 
-				})}
+				{(data[questionIndex].type === "card") &&  // for cards
+					data[questionIndex].options.map((option, i) => {
+						return (
+							<button
+								className={`option flex justify-between items-center p-5 ${activeIndex === i ? "bg-purple-200" : ''}`}
+								onClick={event => handleItemClick(event, i)}
+							>
+								<span className='font-semibold'>{option}</span>
+								<CheckIcon
+									className={`icon rounded-full text-xs text-white  ${activeIndex === i ? "bg-purple-700" : 'bg-gray-300'}`}
+								/>
+							</button>
+						);
+
+					})}
+
+				{(data[questionIndex].type !== "card") &&  // for square / squareMany
+					data[questionIndex].options.map((option, i) => {
+						return (
+							<button
+								className={`square relative flex flex-col justify-between items-center p-2 ${activeIndex === i ? "bg-purple-200" : ''}`}
+								onClick={event => handleItemClick(event, i)}
+							>
+								<img className="min-h-0" src={option.img} alt="" />
+								<span className='absolute bottom-2 min-h-0 font-semibold'>{option.text}</span>
+							</button>
+						);
+
+					})}
+
+
+
 			</div>
 			<button
 				className="h-10 mt-20 text-sm rounded-md text-white bg-purple-700"

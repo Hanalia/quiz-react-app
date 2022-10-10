@@ -9,6 +9,16 @@ button.option {
   color: black;
 }
 
+button.square {
+  cursor: pointer;
+  font-size: 0.8rem;
+  height: 100px;
+  box-shadow: 0px 2px 5px rgba(131, 116, 116, 0.25);
+  border-radius: 5px;
+  color: black;
+  flex: 0 0 28%;
+}
+
 .fadeIn {
   animation: fadeInAnimation 1s linear;
 }

@@ -1,7 +1,95 @@
 [
 	{
 		"category": "Politics",
-		"type": "multiple",
+		"type": "square",
+		"difficulty": "easy",
+		"question": "성별은 \n 어떻게 되시나요?",
+		"subQuestion": "성별에 따라 필요한 영양성분이 \n 다를 수 있어요",
+		"correct_answer": "",
+		"incorrect_answers": [
+			{
+				"text": "남성",
+				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/men.png"
+			},
+			{
+				"text": "여성",
+				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/women.png"
+			}
+		]
+	},
+	{
+		"category": "Politics",
+		"type": "squareMany",
+		"difficulty": "easy",
+		"question": "고민되시거나 개선하고 싶은 \n 건강고민을 선택해주세요",
+		"subQuestion": "최대 8개 선택",
+		"correct_answer": "",
+		"incorrect_answers": [
+			{
+				"text": "혈중 콜레스테롤",
+				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/blood_pressure.png",
+				"tag": "30대 추천"
+			},
+			{
+				"text": "눈 건강",
+				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/eyes.png",
+				"tag": "30대 추천"
+			},
+			{
+				"text": "피로감",
+				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/fatigue.png",
+				"tag": "30대 추천"
+			},
+			{
+				"text": "간 건강",
+				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/liver.png",
+				"tag": "30대 추천"
+			},
+			{
+				"text": "남성 건강",
+				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/men.png",
+				"tag": "추천"
+			},
+			{
+				"text": "피부 건강",
+				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/skincare.png",
+				"tag": ""
+			},
+			{
+				"text": "노화 & 항산화",
+				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/anti-aging.png",
+				"tag": ""
+			},
+			{
+				"text": "혈압",
+				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/blood_pressure.png",
+				"tag": ""
+			},
+			{
+				"text": "뼈 건강",
+				"img": "https://cdn.pillyze.io/icons/higs/bones2.png",
+				"tag": ""
+			},
+			{
+				"text": "면역 기능",
+				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/immunity.png",
+				"tag": ""
+			},
+			{
+				"text": "장 건강",
+				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/intestine.png",
+				"tag": ""
+			},
+			{
+				"text": "체지방",
+				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/fat.png",
+				"tag": ""
+			}
+		]
+	},
+	{
+		"category": "Politics",
+		"type": "card",
 		"difficulty": "easy",
 		"question": "아래 해당하는 상태가 있다면 \n 선택해주세요",
 		"subQuestion": "자녀계획이 있으시다면, \n 더 신경써서 알려드릴게요",
@@ -13,7 +101,7 @@
 	},
 	{
 		"category": "Politics",
-		"type": "multiple",
+		"type": "card",
 		"difficulty": "easy",
 		"question": "흡연 여부에 대해 \n 알려주세요",
 		"subQuestion": "흡연을 하시는 경우 조심해야 할 \n 영양 성분이 있어요",
@@ -25,7 +113,7 @@
 	},
 	{
 		"category": "Entertainment: Video Games",
-		"type": "multiple",
+		"type": "card",
 		"difficulty": "medium",
 		"question": "갖고 있는 질환이 있다면 \n 선택해주세요",
 		"subQuestion": "각 상태에서 피해야 하는 영양성분을 \n 분석해드릴게요",
@@ -51,7 +139,7 @@
 	},
 	{
 		"category": "Entertainment: Television",
-		"type": "multiple",
+		"type": "card",
 		"difficulty": "medium",
 		"question": "알러지가 있으신가요?",
 		"subQuestion": "각 상태에서 피해야 하는 영양성분을 \n 분석해드릴게요",
@@ -63,7 +151,7 @@
 	},
 	{
 		"category": "Entertainment: Video Games",
-		"type": "multiple",
+		"type": "card",
 		"difficulty": "medium",
 		"question": "복용 중인 약이 있으신가요?",
 		"subQuestion": "함께 먹으면 안되는 영양성분을 \n 분석해드릴게요",
@@ -71,6 +159,32 @@
 		"incorrect_answers": [
 			"복용 중인 약이 없어요",
 			"복용 중인 약이 있어요"
+		],
+		"addInfo": [
+			"혈압약",
+			"당노역",
+			"고지혈증약",
+			"위장약",
+			"변비약",
+			"소화제",
+			"항생제",
+			"소염진통제",
+			"항히스타민제",
+			"갑상선질환 치료제",
+			"여드름 치료제",
+			"통품 치료제",
+			"기관제 확장제",
+			"탈모 치료제",
+			"전립선배디증 치료제",
+			"성호르몬제",
+			"비스포스포네이트",
+			"편두통 치료제",
+			"간염 치료제",
+			"부정맥 치료제",
+			"항우울제",
+			"항혈전제",
+			"면역억제제",
+			"식욕억제제"
 		]
 	}
 ]
