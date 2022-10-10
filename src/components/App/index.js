@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 
 import Layout from '../Layout';
 import Loader from '../Loader';
+import FinalLoader from '../FinalLoader';
+
 import Main from '../Main';
 import Quiz from '../Quiz';
 import Result from '../Result';
 
 import { shuffle } from '../../utils';
+import { Fragment } from 'react';
 
 const App = () => {
 	const [loading, setLoading] = useState(false);
@@ -29,13 +32,13 @@ const App = () => {
 
 	const endQuiz = resultData => {
 		setLoading(true);
-
+		setIsQuizCompleted(true);
 		setTimeout(() => {
 			setIsQuizStarted(false);
-			setIsQuizCompleted(true);
+
 			setResultData(resultData);
 			setLoading(false);
-		}, 2000);
+		}, 5000);
 	};
 
 	const replayQuiz = () => {
@@ -70,8 +73,9 @@ const App = () => {
 	};
 
 	return (
-		<div className='m-5'>
-			{loading && <Loader />}
+		<Layout>
+			{loading && !isQuizCompleted && <Loader />}
+			{loading && isQuizCompleted && <FinalLoader />}
 			{!loading && !isQuizStarted && !isQuizCompleted && (
 				<Main startQuiz={startQuiz} />
 			)}
@@ -81,7 +85,7 @@ const App = () => {
 			{!loading && isQuizCompleted && (
 				<Result {...resultData} replayQuiz={replayQuiz} resetQuiz={resetQuiz} />
 			)}
-		</div>
+		</Layout>
 	);
 };
 

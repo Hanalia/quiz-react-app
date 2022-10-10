@@ -1,5 +1,17 @@
-import styled from "styled-components";
 
+import styled, { keyframes, css } from "styled-components";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+export const FadeIn = styled.div`
+  animation: ${fadeIn} .5s ease-in-out;
+`;
 export const Wrapper = styled.div`
   max-width: 600px;
   border-radius: 10px;

@@ -3,58 +3,74 @@
 		"category": "Politics",
 		"type": "multiple",
 		"difficulty": "easy",
-		"question": "Whose 2016 presidential campaign slogan was &quot;Make America Great Again&quot;?",
-		"correct_answer": "Donald Trump",
+		"question": "아래 해당하는 상태가 있다면 \n 선택해주세요",
+		"subQuestion": "자녀계획이 있으시다면, \n 더 신경써서 알려드릴게요",
+		"correct_answer": "",
 		"incorrect_answers": [
-			"Ted Cruz",
-			"Marco Rubio",
-			"Bernie Sanders"
+			"해당사항 없음",
+			"6개월 내 자녀계획 있음"
+		]
+	},
+	{
+		"category": "Politics",
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "흡연 여부에 대해 \n 알려주세요",
+		"subQuestion": "흡연을 하시는 경우 조심해야 할 \n 영양 성분이 있어요",
+		"correct_answer": "",
+		"incorrect_answers": [
+			"비흡연",
+			"흡연"
 		]
 	},
 	{
 		"category": "Entertainment: Video Games",
 		"type": "multiple",
 		"difficulty": "medium",
-		"question": "Which was the first video game to be produced by development company Rare?",
-		"correct_answer": "Slalom",
+		"question": "갖고 있는 질환이 있다면 \n 선택해주세요",
+		"subQuestion": "각 상태에서 피해야 하는 영양성분을 \n 분석해드릴게요",
+		"correct_answer": "",
 		"incorrect_answers": [
-			"R.C. Pro-Am",
-			"Donkey Kong Country",
-			"Battletoads"
+			"기저질환 없음",
+			"빈혈",
+			"천식",
+			"혈압 높음 (고혈압)",
+			"혈압 높음 (당뇨)",
+			"콜레스테롤 높음 (고지혈증)",
+			"담낭 질환",
+			"통풍",
+			"심장 질환",
+			"고칼슘혈증",
+			"신장 질환 주의",
+			"간 질환 주의",
+			"위장 질환",
+			"갑상선 질환",
+			"비타민D 부족",
+			"기타"
 		]
 	},
 	{
 		"category": "Entertainment: Television",
 		"type": "multiple",
 		"difficulty": "medium",
-		"question": "What was the name of Ross&#039; pet monkey on &quot;Friends&quot;?",
-		"correct_answer": "Marcel",
+		"question": "알러지가 있으신가요?",
+		"subQuestion": "각 상태에서 피해야 하는 영양성분을 \n 분석해드릴게요",
+		"correct_answer": "",
 		"incorrect_answers": [
-			"Jojo",
-			"George",
-			"Champ"
+			"알러지가 없어요",
+			"알러지가 있어요 "
 		]
 	},
 	{
 		"category": "Entertainment: Video Games",
 		"type": "multiple",
 		"difficulty": "medium",
-		"question": "Which of these is NOT a faction included in the game Counter-Strike: Global Offensive?",
-		"correct_answer": "BOPE",
+		"question": "복용 중인 약이 있으신가요?",
+		"subQuestion": "함께 먹으면 안되는 영양성분을 \n 분석해드릴게요",
+		"correct_answer": "",
 		"incorrect_answers": [
-			"GSG-9",
-			"Elite Crew",
-			"Phoenix Connexion"
-		]
-	},
-	{
-		"category": "General Knowledge",
-		"type": "boolean",
-		"difficulty": "medium",
-		"question": "&quot;Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo.&quot; is a grammatically correct sentence.",
-		"correct_answer": "True",
-		"incorrect_answers": [
-			"False"
+			"복용 중인 약이 없어요",
+			"복용 중인 약이 있어요"
 		]
 	}
 ]

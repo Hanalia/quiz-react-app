@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 const Layout = ({ children }) => {
 	return (
-		<Fragment>
-			<main>{children}</main>
-		</Fragment>
+		<div className='pt-15 p-10 flex items-center justify-center'>
+			{children}
+		</div>
 	);
 };
 

@@ -1,114 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {
-	Container,
-	Segment,
-	Item,
-	Dropdown,
-	Divider,
-	Button,
-	Message,
-} from 'semantic-ui-react';
 
-import mindImg from '../../images/mind.svg';
 
-import {
-	CATEGORIES,
-	NUM_OF_QUESTIONS,
-	DIFFICULTY,
-	QUESTIONS_TYPE,
-	COUNTDOWN_TIME,
-} from '../../constants';
-import { shuffle } from '../../utils';
 
-import Offline from '../Offline';
+import { filterNull } from '../../utils';
+
 
 const Main = ({ startQuiz }) => {
-	const [category, setCategory] = useState('0');
-	const [numOfQuestions, setNumOfQuestions] = useState(5);
-	const [difficulty, setDifficulty] = useState('0');
-	const [questionsType, setQuestionsType] = useState('0');
-	const [countdownTime, setCountdownTime] = useState({
-		hours: 0,
-		minutes: 120,
-		seconds: 0,
-	});
+
 	const [processing, setProcessing] = useState(false);
 	const [error, setError] = useState(null);
-	const [offline, setOffline] = useState(false);
 
-	const handleTimeChange = (e, { name, value }) => {
-		setCountdownTime({ ...countdownTime, [name]: value });
-	};
-
-	let allFieldsSelected = false;
-	if (
-		category &&
-		numOfQuestions &&
-		difficulty &&
-		questionsType &&
-		(countdownTime.hours || countdownTime.minutes || countdownTime.seconds)
-	) {
-		allFieldsSelected = true;
-	}
-
-	const fetchData = () => {
-		setProcessing(true);
-
-		if (error) setError(null);
-
-		const API = `https://opentdb.com/api.php?amount=${numOfQuestions}&category=${category}&difficulty=${difficulty}&type=${questionsType}`;
-
-		fetch(API)
-			.then(respone => respone.json())
-			.then(data =>
-				setTimeout(() => {
-					const { response_code, results } = data;
-
-					if (response_code === 1) {
-						const message = (
-							<p>
-								The API doesn't have enough questions for your query. (Ex.
-								Asking for 50 Questions in a Category that only has 20.)
-								<br />
-								<br />
-								Please change the <strong>No. of Questions</strong>,{' '}
-								<strong>Difficulty Level</strong>, or{' '}
-								<strong>Type of Questions</strong>.
-							</p>
-						);
-
-						setProcessing(false);
-						setError({ message });
-
-						return;
-					}
-					console.log(JSON.stringify(results))
-					results.forEach(element => {
-						element.options = shuffle([
-							element.correct_answer,
-							...element.incorrect_answers,
-						]);
-					});
-
-					setProcessing(false);
-					startQuiz(
-						results,
-						countdownTime.hours + countdownTime.minutes + countdownTime.seconds
-					);
-				}, 1000)
-			)
-			.catch(error =>
-				setTimeout(() => {
-					if (!navigator.onLine) {
-						setOffline(true);
-					} else {
-						setProcessing(false);
-						setError(error);
-					}
-				}, 1000)
-			);
-	};
 
 	const fetchLocalData = async () => {
 		setProcessing(true);
@@ -116,140 +18,34 @@ const Main = ({ startQuiz }) => {
 		if (error) setError(null);
 
 		const results = require("../../data/data.json");
+		console.log({ results })
 
-		results.forEach(element => {
-			element.options = shuffle([
+		const processedData = results.map((element) => ({
+			...element, options: filterNull([
 				element.correct_answer,
 				...element.incorrect_answers,
-			]);
-		});
+			])
+		}))
 
 		setProcessing(false);
 		startQuiz(
-			results,
-			countdownTime.hours + countdownTime.minutes + countdownTime.seconds
+			processedData,
 		);
 
 	};
 
-	if (offline) return <Offline />;
 
 	return (
-		<div className='m-4'>
-			<Segment>
-				<Item.Group divided>
-					<Item>
-						<Item.Image src={mindImg} />
-						<Item.Content>
-							<Item.Header>
-								<h1>The Ultimate Trivia Quiz</h1>
-							</Item.Header>
-							{error && (
-								<Message error onDismiss={() => setError(null)}>
-									<Message.Header>Error!</Message.Header>
-									{error.message}
-								</Message>
-							)}
-							<Divider />
-							<Item.Meta>
-								<Dropdown
-									fluid
-									selection
-									name="category"
-									placeholder="Select Quiz Category"
-									header="Select Quiz Category"
-									options={CATEGORIES}
-									value={category}
-									onChange={(e, { value }) => setCategory(value)}
-									disabled={processing}
-								/>
-								<br />
-								<Dropdown
-									fluid
-									selection
-									name="numOfQ"
-									placeholder="Select No. of Questions"
-									header="Select No. of Questions"
-									options={NUM_OF_QUESTIONS}
-									value={numOfQuestions}
-									onChange={(e, { value }) => setNumOfQuestions(value)}
-									disabled={processing}
-								/>
-								<br />
-								<Dropdown
-									fluid
-									selection
-									name="difficulty"
-									placeholder="Select Difficulty Level"
-									header="Select Difficulty Level"
-									options={DIFFICULTY}
-									value={difficulty}
-									onChange={(e, { value }) => setDifficulty(value)}
-									disabled={processing}
-								/>
-								<br />
-								<Dropdown
-									fluid
-									selection
-									name="type"
-									placeholder="Select Questions Type"
-									header="Select Questions Type"
-									options={QUESTIONS_TYPE}
-									value={questionsType}
-									onChange={(e, { value }) => setQuestionsType(value)}
-									disabled={processing}
-								/>
-								<br />
-								<Dropdown
-									search
-									selection
-									name="hours"
-									placeholder="Select Hours"
-									header="Select Hours"
-									options={COUNTDOWN_TIME.hours}
-									value={countdownTime.hours}
-									onChange={handleTimeChange}
-									disabled={processing}
-								/>
-								<Dropdown
-									search
-									selection
-									name="minutes"
-									placeholder="Select Minutes"
-									header="Select Minutes"
-									options={COUNTDOWN_TIME.minutes}
-									value={countdownTime.minutes}
-									onChange={handleTimeChange}
-									disabled={processing}
-								/>
-								<Dropdown
-									search
-									selection
-									name="seconds"
-									placeholder="Select Seconds"
-									header="Select Seconds"
-									options={COUNTDOWN_TIME.seconds}
-									value={countdownTime.seconds}
-									onChange={handleTimeChange}
-									disabled={processing}
-								/>
-							</Item.Meta>
-							<Divider />
-							<Item.Extra>
-								<Button
-									primary
-									size="big"
-									icon="play"
-									labelPosition="left"
-									content={processing ? 'Processing...' : 'Play Now'}
-									onClick={fetchLocalData}
-									disabled={!allFieldsSelected || processing}
-								/>
-							</Item.Extra>
-						</Item.Content>
-					</Item>
-				</Item.Group>
-			</Segment>
+		<div className='prose max-w-md w-full'>
+			<h3 className='text-center'>나에게 맞는 영양제 추천받기</h3>
+			<h5 className='text-center text-gray-400'> Skiip</h5>
+
+			<button
+				className='w-full h-10 mt-20 text-sm rounded-md text-white bg-purple-700'
+				onClick={fetchLocalData}
+			>
+				{processing ? '잠시만 기다려 주세요' : '시작하기'}
+			</button>
 			<br />
 		</div>
 	);
