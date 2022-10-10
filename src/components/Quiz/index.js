@@ -61,7 +61,6 @@ const Quiz = ({ data, endQuiz }) => {
 		card: "flex flex-col",
 		square: "flex justify-center gap-10 flex-wrap",
 		squareMany: "flex justify-center gap-5 flex-wrap",
-
 	}
 
 
