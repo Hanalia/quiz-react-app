@@ -26,11 +26,6 @@
 		"correct_answer": "",
 		"incorrect_answers": [
 			{
-				"text": "혈중 콜레스테롤",
-				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/blood_pressure.png",
-				"tag": "30대 추천"
-			},
-			{
 				"text": "눈 건강",
 				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/eyes.png",
 				"tag": "30대 추천"
@@ -83,6 +78,26 @@
 			{
 				"text": "체지방",
 				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/fat.png",
+				"tag": ""
+			},
+			{
+				"text": "두뇌 활동",
+				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/brain.png",
+				"tag": ""
+			},
+			{
+				"text": "관절 건강",
+				"img": "https://cdn.pillyze.io/icons/higs/joint.png",
+				"tag": ""
+			},
+			{
+				"text": "혈당",
+				"img": "https://d2d0e4su18bd3a.cloudfront.net/icons/higs/blood_sugar.png",
+				"tag": ""
+			},
+			{
+				"text": "호흡기 건강",
+				"img": "https://cdn.pillyze.io/icons/higs/breath.png",
 				"tag": ""
 			}
 		]
