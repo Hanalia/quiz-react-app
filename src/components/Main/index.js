@@ -37,8 +37,8 @@ const Main = ({ startQuiz }) => {
 
 	return (
 		<div className='prose max-w-md w-full'>
-			<h3 className='text-center'>나에게 맞는 영양제 추천받기</h3>
-			<h5 className='text-center text-gray-400'> Skiip</h5>
+			<h3 className='text-center'>나에게 맞는 OOO 추천받기</h3>
+			<h5 className='text-center text-gray-400'> OOO주식회사 </h5>
 
 			<button
 				className='w-full h-10 mt-20 text-sm rounded-md text-white bg-purple-700'
